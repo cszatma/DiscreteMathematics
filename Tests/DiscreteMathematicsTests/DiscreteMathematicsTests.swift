@@ -19,5 +19,49 @@ class DiscreteMathematicsTests: XCTestCase {
     
     static var allTests = [
         ("testExample", testExample),
+        ("testCongruenceModulo", testCongruenceModulo),
+        ("testDivides", testDivides),
+        ("testGCD", testGCD),
+        ("testEGCD", testEGCD),
+        ("testCoprime", testCoprime),
+        ("testLDE", testLDE),
+        ("testLDESolutions", testLDESolutions),
     ]
+
+    func testCongruenceModulo() {
+        XCTAssertEqual(3 ==% (15, 12), true)
+        XCTAssertEqual(-8 ==% (7, 5), true)
+        XCTAssertEqual(2 ==% (8, 5), false)
+    }
+
+    func testDivides() {
+        XCTAssertEqual(3 |% 9, true)
+        XCTAssertEqual(2 |% 7, false)
+    }
+
+    func testGCD() {
+        XCTAssertEqual(gcd(5005, 4410), 35)
+        XCTAssertEqual(gcd(-5005, -4410), 35)
+        XCTAssertEqual(gcd(175, 155), 5)
+    }
+
+    func testEGCD() {
+        XCTAssertTrue(egcd(5005, 4410) == (35, -37, 42))
+        XCTAssertTrue(egcd(-5005, -4410) == (35, -37, 42))
+        XCTAssertTrue(egcd(175, 155) == (5, 8, -9))
+    }
+
+    func testCoprime() {
+        XCTAssertEqual(coprime(17, -60), true)
+    }
+
+    func testLDE() {
+        XCTAssertTrue(lde(a: 234, b: 182, c: 260)! == (-30, 40))
+        XCTAssertTrue(lde(a: 175, b: 155, c: 50)! == (80, -90))
+        XCTAssertTrue(lde(a: 234, b: 182, c: 10) == nil)
+    }
+
+    func testLDESolutions() {
+        XCTAssertTrue(ldeSolutions(a: 175, b: 155, c: 50)!(3) == (173, -195))
+    }
 }
