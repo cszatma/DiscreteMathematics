@@ -58,6 +58,7 @@
 		AD2FAA261CD0B6D800659CF4 /* DiscreteMathematics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DiscreteMathematics.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* DiscreteMathematicsTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DiscreteMathematicsTests.plist; sourceTree = "<group>"; };
 		C38F96ED186383EFFEA01CBF /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		C38F9BDE65E66D0D9367F585 /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = "file.swift-version"; path = ".swift-version"; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* DiscreteMathematics-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DiscreteMathematics-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD75028D1C690C7A006590AF /* DiscreteMathematics-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DiscreteMathematics-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E33859C01FCBB77E0080710A /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -197,6 +198,7 @@
 				E33859C21FCBB77E0080710A /* LICENSE */,
 				E33859C01FCBB77E0080710A /* Package.swift */,
 				E33859C31FCBB77E0080710A /* README.md */,
+				C38F9BDE65E66D0D9367F585 /* .swift-version */,
 			);
 			name = Metadata;
 			sourceTree = "<group>";
