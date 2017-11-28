@@ -26,6 +26,9 @@ class DiscreteMathematicsTests: XCTestCase {
         ("testCoprime", testCoprime),
         ("testLDE", testLDE),
         ("testLDESolutions", testLDESolutions),
+        ("testLinearCongruence", testLinearCongruence),
+        ("testLinearCongruenceSimplified", testLinearCongruenceSimplified),
+        ("testLinearCongruenceSolutions", testLinearCongruenceSolutions),
     ]
 
     func testCongruenceModulo() {
@@ -63,5 +66,23 @@ class DiscreteMathematicsTests: XCTestCase {
 
     func testLDESolutions() {
         XCTAssertTrue(ldeSolutions(a: 175, b: 155, c: 50)!(3) == (173, -195))
+    }
+
+    func testLinearCongruence() {
+        XCTAssertEqual(linearCongruence(a: 234, b: 260, m: 182), -30)
+    }
+
+    func testLinearCongruenceSimplified() {
+        let x0 = linearCongruence(a: 234, b: 260, m: 182)
+        let x1 = linearCongruenceSimplified(a: 234, b: 260, m: 182)
+        XCTAssertTrue(x0! ==% (x1!, 182 / gcd(234, 182)))
+    }
+
+    func testLinearCongruenceSolutions() {
+        let solutions = linearCongruenceSolutions(a: 234, b: 260, m: 182)!
+        let s1 = solutions(3), s2 = solutions(9), s3 = solutions(-10)
+        XCTAssertTrue(s1 ==% (s2, 182 / gcd(234, 182)))
+        XCTAssertTrue(s2 ==% (s3, 182 / gcd(234, 182)))
+        XCTAssertTrue(s1 ==% (s3, 182 / gcd(234, 182)))
     }
 }
