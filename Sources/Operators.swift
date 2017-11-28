@@ -12,7 +12,7 @@ infix operator ==%: ComparisonPrecedence
 infix operator |%: ComparisonPrecedence
 
 /// Congruence Modulo n relation.
-/// ∀ a, b ∈ Z, a ≡ b ↔ m | (b - a).
+/// ∀ a, b ∈ Z, a ≡ b(mod m) ↔ m | (b - a).
 public func ==% (lhs: Int, rhs: (b: Int, m: Int)) -> Bool {
     return (rhs.b - lhs) % rhs.m == 0
 }
