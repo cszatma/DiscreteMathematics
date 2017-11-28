@@ -1,16 +1,30 @@
+//    The MIT License (MIT)
 //
-//  ModularArithmetic.swift
-//  DiscreteMathematics
+//    Copyright (c) 2017 Christopher Szatmary
 //
-//  Created by Christopher Szatmary on 2017-11-26.
-//  Copyright © 2017 DiscreteMathematics. All rights reserved.
+//    Permission is hereby granted, free of charge, to any person obtaining a copy
+//    of this software and associated documentation files (the "Software"), to deal
+//    in the Software without restriction, including without limitation the rights
+//    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//    copies of the Software, and to permit persons to whom the Software is
+//    furnished to do so, subject to the following conditions:
 //
+//    The above copyright notice and this permission notice shall be included in all
+//    copies or substantial portions of the Software.
+//
+//    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//    SOFTWARE.
 
 import Foundation
 
 // MARK: - Helper Functions
 
-// Checks for modular congruence between a and b.
+/// Checks for modular congruence between a and b.
 public func congruenceModulo(a: Int, b: Int, m: Int) -> Bool {
     return a ==% (b, m)
 }
@@ -66,10 +80,13 @@ public func linearCongruence(a: Int, b: Int, m: Int) -> Int? {
     return lde(a: a, b: m, c: b)?.x
 }
 
+/// Uses modular congruence to solve the given linear congruence in a simplified way.
 public func linearCongruenceSimplified(a: Int, b: Int, m: Int) -> Int? {
     return lde(a: a % m, b: m, c: b % m)?.x
 }
 
+/// Returns a function that when passed an integer, `n`, will return all solutions to the given linear
+/// congruence. If no solutions exist it will return `nil`.
 public func linearCongruenceSolutions(a: Int, b: Int, m: Int) -> ((Int) -> Int)? {
     guard let x0 = linearCongruenceSimplified(a: a, b: b, m: m) else { return nil }
     return { n in x0 + (m * n) / gcd(a, m) }
