@@ -59,3 +59,18 @@ public func ldeSolutions(a: Int, b: Int, c: Int) -> ((Int) -> (x: Int, y: Int))?
     let d = gcd(a, b)
     return { n in (x0 + (b * n) / d, y0 - (a * n) / d) }
 }
+
+/// Returns a solution to the given Linear Congruence or `nil` if it has no solutions.
+/// a · x ≡ b(mod m)
+public func linearCongruence(a: Int, b: Int, m: Int) -> Int? {
+    return lde(a: a, b: m, c: b)?.x
+}
+
+public func linearCongruenceSimplified(a: Int, b: Int, m: Int) -> Int? {
+    return lde(a: a % m, b: m, c: b % m)?.x
+}
+
+public func linearCongruenceSolutions(a: Int, b: Int, m: Int) -> ((Int) -> Int)? {
+    guard let x0 = linearCongruenceSimplified(a: a, b: b, m: m) else { return nil }
+    return { n in x0 + (m * n) / gcd(a, m) }
+}
