@@ -91,3 +91,27 @@ public func linearCongruenceSolutions(a: Int, b: Int, m: Int) -> ((Int) -> Int)?
     guard let x0 = linearCongruenceSimplified(a: a, b: b, m: m) else { return nil }
     return { n in x0 + (m * n) / gcd(a, m) }
 }
+
+/// Finds a common solution to the linear congruences x ≡ a(mod m) and x ≡ b(mod n) using the Chinese Remainder Theorem.
+/// Returns `nil` if no solution exists.
+public func commonSolutionOfLinearCongruences(a: Int, m: Int, b: Int, n: Int) -> Int? {
+    guard coprime(m, n) else { return nil }
+    guard let y0 = lde(a: m, b: n, c: b - a)?.x else { return nil }
+    return m * y0 + a
+}
+
+/// Implementation of the repeated squaring algorithm to perform modular exponentiation with exponents that are powers of two.
+public func repeatedSquaringAlgorithm(base b: Int, exponent e: Int, mod m: Int) -> Int {
+    if e == 2 { return (b * b) % m }
+    return (repeatedSquaringAlgorithm(base: b, exponent: e / 2, mod: m) ** 2) % m
+}
+
+/// Performs modular exponentiation using the repeated squaring algorithm.
+public func modularExponent(base b: Int, exponent e: Int, mod m: Int) -> Int {
+    let closestPowerOf2 = 2 ** Int(log2(Double(e)))
+    let remaining = e - closestPowerOf2
+    let result = repeatedSquaringAlgorithm(base: b, exponent: closestPowerOf2, mod: m)
+    if remaining == 0 { return result % m }
+    else if remaining == 1 { return (result * b) % m }
+    return (modularExponent(base: b, exponent: remaining, mod: m) * result) % m
+}
