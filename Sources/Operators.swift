@@ -24,6 +24,7 @@ import Foundation
 
 infix operator ==%: ComparisonPrecedence
 infix operator |%: ComparisonPrecedence
+infix operator **: MultiplicationPrecedence
 
 /// Congruence Modulo n relation.
 /// ∀ a, b ∈ Z, a ≡ b(mod m) ↔ m | (b - a).
@@ -35,4 +36,11 @@ public func ==% (lhs: Int, rhs: (b: Int, m: Int)) -> Bool {
 /// ∃ q ∈ N, b = q · a
 public func |% (lhs: Int, rhs: Int) -> Bool {
     return rhs % lhs == 0
+}
+
+extension Int {
+    /// Power operator. Raises the integer on the left to the power of the integer on the right.
+    static func ** (lhs: Int, rhs: Int) -> Int {
+        return Int(pow(Double(lhs), Double(rhs)))
+    }
 }
