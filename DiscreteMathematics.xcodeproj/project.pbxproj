@@ -16,9 +16,13 @@
 		8933C78F1EB5B82C000D00A4 /* DiscreteMathematicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* DiscreteMathematicsTests.swift */; };
 		8933C7901EB5B82D000D00A4 /* DiscreteMathematicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* DiscreteMathematicsTests.swift */; };
 		C38F900D3B92598D374FBB3A /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38F96ED186383EFFEA01CBF /* Operators.swift */; };
+		C38F9025FBCB53E977326EBD /* Sequences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38F95251D9DF2B1D4E813A7 /* Sequences.swift */; };
 		C38F9058B2BB8D185079E3AC /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38F96ED186383EFFEA01CBF /* Operators.swift */; };
+		C38F91002A64940DC5AC515E /* Sequences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38F95251D9DF2B1D4E813A7 /* Sequences.swift */; };
 		C38F926F69210028399E0016 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38F96ED186383EFFEA01CBF /* Operators.swift */; };
 		C38F94759BEF1D756C58F828 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38F96ED186383EFFEA01CBF /* Operators.swift */; };
+		C38F9AFD5C6AA544CE051265 /* Sequences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38F95251D9DF2B1D4E813A7 /* Sequences.swift */; };
+		C38F9DAD28FA83205199621E /* Sequences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38F95251D9DF2B1D4E813A7 /* Sequences.swift */; };
 		DD7502881C68FEDE006590AF /* DiscreteMathematics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* DiscreteMathematics.framework */; };
 		DD7502921C690C7A006590AF /* DiscreteMathematics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* DiscreteMathematics.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +61,7 @@
 		8933C7891EB5B82A000D00A4 /* DiscreteMathematicsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscreteMathematicsTests.swift; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* DiscreteMathematics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DiscreteMathematics.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* DiscreteMathematicsTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DiscreteMathematicsTests.plist; sourceTree = "<group>"; };
+		C38F95251D9DF2B1D4E813A7 /* Sequences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequences.swift; sourceTree = "<group>"; };
 		C38F96ED186383EFFEA01CBF /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		C38F9BDE65E66D0D9367F585 /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = "file.swift-version"; path = ".swift-version"; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* DiscreteMathematics-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DiscreteMathematics-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +167,7 @@
 			children = (
 				8933C7841EB5B820000D00A4 /* ModularArithmetic.swift */,
 				C38F96ED186383EFFEA01CBF /* Operators.swift */,
+				C38F95251D9DF2B1D4E813A7 /* Sequences.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -485,6 +491,7 @@
 			files = (
 				8933C7851EB5B820000D00A4 /* ModularArithmetic.swift in Sources */,
 				C38F9058B2BB8D185079E3AC /* Operators.swift in Sources */,
+				C38F9DAD28FA83205199621E /* Sequences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +509,7 @@
 			files = (
 				8933C7871EB5B820000D00A4 /* ModularArithmetic.swift in Sources */,
 				C38F94759BEF1D756C58F828 /* Operators.swift in Sources */,
+				C38F9025FBCB53E977326EBD /* Sequences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +519,7 @@
 			files = (
 				8933C7881EB5B820000D00A4 /* ModularArithmetic.swift in Sources */,
 				C38F926F69210028399E0016 /* Operators.swift in Sources */,
+				C38F9AFD5C6AA544CE051265 /* Sequences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +529,7 @@
 			files = (
 				8933C7861EB5B820000D00A4 /* ModularArithmetic.swift in Sources */,
 				C38F900D3B92598D374FBB3A /* Operators.swift in Sources */,
+				C38F91002A64940DC5AC515E /* Sequences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
