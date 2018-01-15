@@ -38,9 +38,9 @@ public func |% (lhs: Int, rhs: Int) -> Bool {
     return rhs % lhs == 0
 }
 
-extension Int {
+public extension Int {
     /// Power operator. Raises the integer on the left to the power of the integer on the right.
-    static func ** (lhs: Int, rhs: Int) -> Int {
+    public static func ** (lhs: Int, rhs: Int) -> Int {
         return Int(pow(Double(lhs), Double(rhs)))
     }
 }
