@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'DiscreteMathematics'
-  s.version      = '1.2.0'
+  s.version      = '1.3.0'
   s.summary      = 'Discrete Mathematics algorithms.'
   s.description  = <<-DESC
     A collection of implementations of various concepts from Discrete Mathematics.

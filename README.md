@@ -84,7 +84,7 @@ DiscreteMathematics is available through [CocoaPods](http://cocoapods.org). To i
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'DiscreteMathematics', '~> 1.2'
+pod 'DiscreteMathematics', '~> 1.3'
 ```
 
 ### Swift Package Manager
@@ -98,7 +98,7 @@ import PackageDescription
 let package = Package(
     name: "MyProject",
     dependencies: [
-        .package(url: "https://github.com/cszatma/DiscreteMathematics.git", from: "1.2.0")
+        .package(url: "https://github.com/cszatma/DiscreteMathematics.git", from: "1.3.0")
     ]
 )
 ```
