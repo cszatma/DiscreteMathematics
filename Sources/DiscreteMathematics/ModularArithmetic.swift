@@ -1,6 +1,6 @@
-//    The MIT License (MIT)
+//    MIT License
 //
-//    Copyright (c) 2017 Christopher Szatmary
+//    Copyright (c) 2019 Christopher Szatmary <cs@christopherszatmary.com>
 //
 //    Permission is hereby granted, free of charge, to any person obtaining a copy
 //    of this software and associated documentation files (the "Software"), to deal
@@ -111,7 +111,12 @@ public func modularExponent(base b: Int, exponent e: Int, mod m: Int) -> Int {
     let closestPowerOf2 = 2 ** Int(log2(Double(e)))
     let remaining = e - closestPowerOf2
     let result = repeatedSquaringAlgorithm(base: b, exponent: closestPowerOf2, mod: m)
-    if remaining == 0 { return result % m }
-    else if remaining == 1 { return (result * b) % m }
+
+    if remaining == 0 {
+        return result % m
+    } else if remaining == 1 {
+        return (result * b) % m
+    }
+
     return (modularExponent(base: b, exponent: remaining, mod: m) * result) % m
 }

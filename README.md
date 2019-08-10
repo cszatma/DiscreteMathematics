@@ -1,10 +1,11 @@
 # Discrete Mathematics
 
-[![Language Swift](https://img.shields.io/badge/Language-Swift%204.0-orange.svg?style=flat)](https://swift.org)
-[![Version](https://img.shields.io/cocoapods/v/DiscreteMathematics.svg?style=flat)](http://cocoapods.org/pods/DiscreteMathematics)
-[![License](https://img.shields.io/cocoapods/l/DiscreteMathematics.svg?style=flat)](http://cocoapods.org/pods/DiscreteMathematics)
-[![Platform](https://img.shields.io/cocoapods/p/DiscreteMathematics.svg?style=flat)](http://cocoapods.org/pods/DiscreteMathematics)
-[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
+[![Language Swift](https://img.shields.io/badge/Language-Swift%205.0-orange.svg?style=for-the-badge&logo=swift)](https://swift.org)
+[![CI Status](https://img.shields.io/circleci/build/github/cszatma/DiscreteMathematics?logo=CircleCI&style=for-the-badge)](https://circleci.com/gh/cszatma/DiscreteMathematics)
+[![Release Version](https://img.shields.io/github/release/cszatma/DiscreteMathematics.svg?style=for-the-badge)](https://github.com/cszatma/DiscreteMathematics/releases)
+![Platforms](https://img.shields.io/badge/Platforms-macOS%20Linux-lightgrey.svg?style=for-the-badge&logo=linux)
+[![License](https://img.shields.io/github/license/cszatma/DiscreteMathematics.svg?style=for-the-badge)](https://github.com/cszatma/DiscreteMathematics/blob/master/LICENSE)
+[![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen.svg?style=for-the-badge)](https://swift.org/package-manager/)
 
 **DiscreteMathematics** is a set of algorithm implementations from Discrete Mathematics.
 
@@ -28,7 +29,7 @@ Returns whether or not a|b ↔ ∃ q ∈ N, b = q · a.
 ### Functions
 #### Long Division 
 Performs division on two integers and returns the quotient and remainder.
-<br>
+
 a = q · b + r
 ```swift
 longDivision(a: 8, b: 3) // (q: 2, r: 2)
@@ -42,7 +43,7 @@ gcd(175, 155) // 5
 ```
 
 `egcd()` returns the GCD of two integers as an integer combination using the Extended Euclidean Algorithm.
-<br>
+
  a · x + b · y = d
  ```swift
 egcd(5005, 4410) // (d: 35, x: -37, y: 42)
@@ -70,38 +71,28 @@ solutions!(3) // (173, -195)
 
 ## Installation
 
-### Requirements
-* iOS 8.0+
-* macOS 10.9+
-* tvOS 9.0+
-* watchOS  2.0+
-* Linux
-* Swift 4
+### Swift Package Manager
+
+The recommended way to install `DiscreteMathematics` is by using the [Swift Package Manager](https://swift.org/package-manager/).
+
+To install it, add the following to your `Package.swift`'s `dependencies` array:
+
+```swift
+.package(url: "https://github.com/cszatma/DiscreteMathematics.git", from: "2.0.0")
+```
 
 ### CocoaPods
 
-DiscreteMathematics is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+DiscreteMathematics is also available through [CocoaPods](http://cocoapods.org).
+
+To install it, add the following line to your Podfile:
 
 ```ruby
-pod 'DiscreteMathematics', '~> 1.3'
+pod 'DiscreteMathematics', '~> 2.0'
 ```
 
-### Swift Package Manager
-
-DiscreteMathematics is available through the [Swift Package Manager](https://swift.org/package-manager/)
-To install it, add the following to your `Package.swift`.
-
-```swift
-import PackageDescription
-
-let package = Package(
-    name: "MyProject",
-    dependencies: [
-        .package(url: "https://github.com/cszatma/DiscreteMathematics.git", from: "1.3.0")
-    ]
-)
-```
+## License
+DiscreteMathematics is available under the [MIT License](LICENSE).
 
 ## Contributing
 Open an issue or submit a pull request.

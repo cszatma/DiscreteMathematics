@@ -1,6 +1,6 @@
-//    The MIT License (MIT)
+//    MIT License
 //
-//    Copyright (c) 2017 Christopher Szatmary
+//    Copyright (c) 2019 Christopher Szatmary <cs@christopherszatmary.com>
 //
 //    Permission is hereby granted, free of charge, to any person obtaining a copy
 //    of this software and associated documentation files (the "Software"), to deal
@@ -22,10 +22,25 @@
 
 import Foundation
 
-public func summation(lower: Int, upper: Int, fn: ((Int) -> Double)) -> Double {
-    return (lower...upper).reduce(0) { $0 + fn($1) }
+infix operator ==%: ComparisonPrecedence
+infix operator |%: ComparisonPrecedence
+infix operator **: MultiplicationPrecedence
+
+/// Congruence Modulo n relation.
+/// ∀ a, b ∈ Z, a ≡ b(mod m) ↔ m | (b - a).
+public func ==% (lhs: Int, rhs: (b: Int, m: Int)) -> Bool {
+    return (rhs.b - lhs) % rhs.m == 0
 }
 
-public func product(lower: Int, upper: Int, fn: ((Int) -> Double)) -> Double {
-    return (lower...upper).reduce(1) { $0 * fn($1) }
+/// Divides operator. Returns true if a divides b.
+/// ∃ q ∈ N, b = q · a
+public func |% (lhs: Int, rhs: Int) -> Bool {
+    return rhs % lhs == 0
+}
+
+public extension Int {
+    /// Power operator. Raises the integer on the left to the power of the integer on the right.
+    static func ** (lhs: Int, rhs: Int) -> Int {
+        return Int(pow(Double(lhs), Double(rhs)))
+    }
 }
