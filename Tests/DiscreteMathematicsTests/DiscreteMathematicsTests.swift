@@ -107,4 +107,13 @@ class DiscreteMathematicsTests: XCTestCase {
         XCTAssertTrue(modularExponent(base: 17, exponent: 2015, mod: 5) ==% (3, 5))
         XCTAssertTrue(modularExponent(base: 46, exponent: 1001, mod: 100) ==% (96, 100))
     }
+    
+    func testRSA() {
+        let encrypted = encrypt(string: "hi", e: 3, pq: 55)
+        let decrypted = decrypt(string: encrypted, d: 27, pq: 55)
+        print(encrypted)
+        print(decrypted)
+        print(14 % 55)
+        print(modularExponent(base: 675, exponent: 307, mod: 713))
+    }
 }
