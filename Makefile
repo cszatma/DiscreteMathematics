@@ -1,4 +1,4 @@
-.DEFAULT_GOAL = build-dev
+.DEFAULT_GOAL = xcode
 
 mint:
 	mint bootstrap
