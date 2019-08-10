@@ -1,5 +1,5 @@
-import XCTest
 @testable import DiscreteMathematicsTests
+import XCTest
 
 XCTMain([
     testCase(DiscreteMathematicsTests.allTests),

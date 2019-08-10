@@ -7,7 +7,8 @@ let package = Package(
     products: [
         .library(
             name: "DiscreteMathematics",
-            targets: ["DiscreteMathematics"]),
+            targets: ["DiscreteMathematics"]
+        ),
     ],
     dependencies: [
         .package(url: "https://github.com/Quick/Quick.git", from: "2.1.0"),
@@ -17,10 +18,12 @@ let package = Package(
     targets: [
         .target(
             name: "DiscreteMathematics",
-            dependencies: []),
+            dependencies: []
+        ),
         .testTarget(
             name: "DiscreteMathematicsTests",
-            dependencies: ["DiscreteMathematics", "Quick", "Nimble"]),
+            dependencies: ["DiscreteMathematics", "Quick", "Nimble"]
+        ),
     ],
     swiftLanguageVersions: [.v5]
 )

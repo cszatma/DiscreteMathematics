@@ -6,9 +6,9 @@
 //  Copyright © 2017 DiscreteMathematics. All rights reserved.
 //
 
+import DiscreteMathematics
 import Foundation
 import XCTest
-import DiscreteMathematics
 
 class DiscreteMathematicsTests: XCTestCase {
     func testExample() {
@@ -16,7 +16,7 @@ class DiscreteMathematicsTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         //// XCTAssertEqual(DiscreteMathematics().text, "Hello, World!")
     }
-    
+
     static var allTests = [
         ("testExample", testExample),
         ("testCongruenceModulo", testCongruenceModulo),
@@ -88,26 +88,26 @@ class DiscreteMathematicsTests: XCTestCase {
         XCTAssertTrue(s2 ==% (s3, 182 / gcd(234, 182)))
         XCTAssertTrue(s1 ==% (s3, 182 / gcd(234, 182)))
     }
-    
+
     func testCommonSolutionOfLinearCongruences() {
         let x0 = commonSolutionOfLinearCongruences(a: 9, m: 13, b: 2, n: 5)!
-        XCTAssertTrue(x0 ==% (22, 13*5))
-        XCTAssertTrue(x0 ==% (commonSolutionOfLinearCongruences(a: -4, m: 13, b: 5007, n: 5)!, 13*5))
+        XCTAssertTrue(x0 ==% (22, 13 * 5))
+        XCTAssertTrue(x0 ==% (commonSolutionOfLinearCongruences(a: -4, m: 13, b: 5007, n: 5)!, 13 * 5))
     }
-    
+
     func testRepeatedSquaringAlgorithm() {
         XCTAssertTrue(repeatedSquaringAlgorithm(base: 1915, exponent: 128, mod: 10781) ==% (4592, 10781))
         XCTAssertTrue(repeatedSquaringAlgorithm(base: 1915, exponent: 64, mod: 10781) ==% (3729 * 3729, 10781))
     }
-    
+
     func testModularExponent() {
         XCTAssertTrue(modularExponent(base: 1915, exponent: 131, mod: 10781) ==% (9086, 10781))
         XCTAssertTrue(modularExponent(base: 9086, exponent: 2551, mod: 10781) ==% (1915, 10781))
-        XCTAssertTrue(modularExponent(base: 2017, exponent: 100345, mod: 2034) ==% (1963, 2034))
+        XCTAssertTrue(modularExponent(base: 2017, exponent: 100_345, mod: 2034) ==% (1963, 2034))
         XCTAssertTrue(modularExponent(base: 17, exponent: 2015, mod: 5) ==% (3, 5))
         XCTAssertTrue(modularExponent(base: 46, exponent: 1001, mod: 100) ==% (96, 100))
     }
-    
+
     func testRSA() {
         let encrypted = encrypt(string: "hi", e: 3, pq: 55)
         let decrypted = decrypt(string: encrypted, d: 27, pq: 55)

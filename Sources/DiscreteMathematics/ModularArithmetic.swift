@@ -111,7 +111,12 @@ public func modularExponent(base b: Int, exponent e: Int, mod m: Int) -> Int {
     let closestPowerOf2 = 2 ** Int(log2(Double(e)))
     let remaining = e - closestPowerOf2
     let result = repeatedSquaringAlgorithm(base: b, exponent: closestPowerOf2, mod: m)
-    if remaining == 0 { return result % m }
-    else if remaining == 1 { return (result * b) % m }
+
+    if remaining == 0 {
+        return result % m
+    } else if remaining == 1 {
+        return (result * b) % m
+    }
+
     return (modularExponent(base: b, exponent: remaining, mod: m) * result) % m
 }

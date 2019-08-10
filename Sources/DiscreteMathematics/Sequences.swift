@@ -22,10 +22,10 @@
 
 import Foundation
 
-public func summation(lower: Int, upper: Int, fn: ((Int) -> Double)) -> Double {
+public func summation(lower: Int, upper: Int, fn: (Int) -> Double) -> Double {
     return (lower...upper).reduce(0) { $0 + fn($1) }
 }
 
-public func product(lower: Int, upper: Int, fn: ((Int) -> Double)) -> Double {
+public func product(lower: Int, upper: Int, fn: (Int) -> Double) -> Double {
     return (lower...upper).reduce(1) { $0 * fn($1) }
 }
