@@ -1,6 +1,9 @@
 @testable import DiscreteMathematicsTests
-import XCTest
+import Quick
 
-XCTMain([
-    testCase(DiscreteMathematicsTests.allTests),
+QCKMain([
+    ModularArithmeticTests.self,
+    OperatorsTests.self,
+    RSATests.self,
+    SequencesTests.self,
 ])
