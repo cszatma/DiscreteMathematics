@@ -62,6 +62,7 @@ jobs:
           command: swift test
 
 workflows:
+  version: 2.1
   build-test:
     jobs:
       - build-dev
