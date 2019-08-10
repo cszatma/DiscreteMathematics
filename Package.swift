@@ -1,24 +1,40 @@
-// swift-tools-version:4.0
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version:5.0
 
 import PackageDescription
 
 let package = Package(
     name: "DiscreteMathematics",
     products: [
-        // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "DiscreteMathematics",
             targets: ["DiscreteMathematics"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/Quick/Quick.git", from: "2.1.0"),
+        .package(url: "https://github.com/Quick/Nimble.git", from: "8.0.2"),
+        .package(url: "https://github.com/orta/Komondor.git", from: "1.0.4"),
+    ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "DiscreteMathematics",
             dependencies: []),
         .testTarget(
             name: "DiscreteMathematicsTests",
-            dependencies: ["DiscreteMathematics"]),
-    ]
+            dependencies: ["DiscreteMathematics", "Quick", "Nimble"]),
+    ],
+    swiftLanguageVersions: [.v5]
 )
+
+#if canImport(PackageConfig)
+    import PackageConfig
+
+    let config = PackageConfiguration([
+        "komondor": [
+            "pre-commit": [
+                "make format",
+                "make lint",
+                "git add .",
+            ],
+        ],
+    ]).write()
+#endif
